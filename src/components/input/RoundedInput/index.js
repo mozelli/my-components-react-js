@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./styles.css";
 import EmailIcon from "../assets/email-icon.svg";
@@ -13,6 +13,16 @@ function RoundedInput() {
     function changeInputState() {
         setInputFocus(!inputFocus);
     }
+
+    useEffect(() => {
+        if(inputFocus) {
+            setLabelStyle("focus");
+            setInputContainerStyle("input-container focus");
+        } else {
+            setLabelStyle("");
+            setInputContainerStyle("input-container");
+        }
+    }, [inputFocus]);
 
     return (
         <div id="rounded-input">
