@@ -36,3 +36,16 @@
     height: 29px;
     padding: 0 12px 0 0;
 }
+
+/* LABEL TRANSITION */
+#rounded-input label.focus {
+    color: var(--color-secondary);
+    letter-spacing: 2px;
+    margin: 0 0 8px 26px;
+}
+
+/* INPUT-CONTAINER TRANSITION */
+#rounded-input .input-container.focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 4px var(--color-secondary);
+}

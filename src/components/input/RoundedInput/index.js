@@ -6,6 +6,9 @@ import EmailIcon from "../assets/email-icon.svg";
 function RoundedInput() {
 
     const [ inputFocus, setInputFocus ] = useState(false);
+    const [ inputContainerStyle, setInputContainerStyle ] = useState(`input-container`);
+    const [ labelStyle, setLabelStyle ] = useState("");
+
 
     function changeInputState() {
         setInputFocus(!inputFocus);
@@ -13,8 +16,8 @@ function RoundedInput() {
 
     return (
         <div id="rounded-input">
-            <label>Email</label>
-            <div className="input-container">
+            <label className={ labelStyle } >Email</label>
+            <div className={ inputContainerStyle }>
                 <input 
                     type="text"
                     onFocus={ changeInputState }
