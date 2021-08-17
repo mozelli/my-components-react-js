@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 
 import "./styles.css";
-import EmailIcon from "../assets/email-icon.svg";
 
-function RoundedInput() {
+function RoundedInput({ type, label, icon="", size="" }) {
 
     const [ inputFocus, setInputFocus ] = useState(false);
-    const [ inputContainerStyle, setInputContainerStyle ] = useState(`input-container`);
+    const [ inputContainerStyle, setInputContainerStyle ] = useState(`input-container ${ size }`);
     const [ labelStyle, setLabelStyle ] = useState("");
 
 
@@ -17,23 +16,26 @@ function RoundedInput() {
     useEffect(() => {
         if(inputFocus) {
             setLabelStyle("focus");
-            setInputContainerStyle("input-container focus");
+            setInputContainerStyle(`input-container focus ${ size }`);
         } else {
             setLabelStyle("");
-            setInputContainerStyle("input-container");
+            setInputContainerStyle(`input-container ${size}`);
         }
-    }, [inputFocus]);
+    }, [inputFocus, size]);
 
     return (
         <div id="rounded-input">
-            <label className={ labelStyle } >Email</label>
+            <label className={ labelStyle } >{ label }</label>
             <div className={ inputContainerStyle }>
                 <input 
-                    type="text"
+                    type={ type }
+                    className={ size }
                     onFocus={ changeInputState }
                     onBlur={ changeInputState } 
                 />
-                <img src={ EmailIcon } alt="Email" />
+                { icon === "" || 
+                    <img src={ icon } alt={ label } className={ size } />
+                }
             </div>
         </div>
     );

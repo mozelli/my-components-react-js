@@ -51,3 +51,33 @@
     border-color: var(--color-primary);
     box-shadow: 0 0 4px var(--color-primary);
 }
+
+/* SIZING */
+#rounded-input .input-container.lg {
+    height: 48px;
+}
+
+#rounded-input .input-container input.lg {
+    font-size: 20px;
+    padding: 0 16px;
+    height: 44px;
+}
+
+#rounded-input .input-container img.lg {
+    height: 39px;
+}
+
+
+#rounded-input .input-container.sm {
+    height: 31px;
+}
+
+#rounded-input .input-container input.sm {
+    font-size: 14px;
+    padding: 0 8px;
+    height: 27px;
+}
+
+#rounded-input .input-container img.sm {
+    height: 22px;
+}
